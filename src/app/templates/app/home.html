@@ -1,0 +1,115 @@
+{% extends "public/base.html" %}
+{% load fullurl %}
+{% block head_title %}
+  Home
+{% endblock head_title %}
+{% block content %}
+  <div class="bg-gray-100 dark:bg-gray-900">
+    <div class="mx-auto px-2 py-1 grid grid-cols-2">
+      <div class="text-sm text-gray-700 dark:text-gray-200 flex items-center pl-2">Viewing 5 of 10 apps</div>
+      <div class="flex flex-row justify-end">
+        <div class="rounded-lg bg-cyan-500 px-1 py-1 mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor"
+               class="size-6"
+               data-tooltip-target="tooltip-tile-view">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 0 1-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0 1 12 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 1.5v-1.5m0 0c0-.621.504-1.125 1.125-1.125m0 0h7.5" />
+          </svg>
+        </div>
+        <div id="tooltip-tile-view"
+             role="tooltip"
+             class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+          Tile View
+          <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+        <div class="rounded-lg bg-cyan-600 px-1 py-1 mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               stroke-width="1.5"
+               stroke="currentColor"
+               class="size-6"
+               data-tooltip-target="tooltip-list-view">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+          </svg>
+        </div>
+        <div id="tooltip-list-view"
+             role="tooltip"
+             class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+          List View
+          <div class="tooltip-arrow" data-popper-arrow></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="h-2 w-full bg-gray-200 dark:bg-gray-800"></div>
+  <div class="w-full bg-gray-200 rounded-lg shadow dark:border md:mt-0 xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+    <div class="grid grid-cols-[300px_auto] mx-auto">
+      <div class="bg-gray-100 dark:bg-gray-800">
+        <div class="grid grid-cols-2 mx-auto px-5 py-5">
+          <div>Filter Applications</div>
+          <div class="text-sky-600 dark:text-sky-300 text-sm text-right flex  items-bottom">Reset Filters</div>
+        </div>
+        <div class="flex-grow border-t border-gray-400 "></div>
+        <div class="px-5 py-5">
+          <div class="pb-3 text-gray-700 dark:text-gray-200">Category</div>
+          <div class="pl-2 flex items-center mb-4">
+            <input id="default-checkbox"
+                   type="checkbox"
+                   value=""
+                   class="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-400 rounded focus:ring-cyan-500 dark:focus:ring-cyan-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="default-checkbox"
+                   class="ms-2 text-sm font-medium text-gray-600 dark:text-gray-400">Default checkbox</label>
+          </div>
+        </div>
+        <div class="flex-grow border-t border-gray-400"></div>
+        <div class="px-5 py-5">c</div>
+      </div>
+      <div class="flex flex-col items-center justify-center px-6 mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {% if apps %}
+            {% for app in apps %}
+              <a href="{% url 'app:item' app.uuid %}">
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-xl border-2 border-gray-300 dark:border-grey-700 px-2 py-2">
+                  <div class="text-gray-400 dark:text-gray-500">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke-width="1.5"
+                         stroke="currentColor"
+                         class="size-6"
+                         data-tooltip-target="tooltip-{{ app.uuid }}">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                  </div>
+                  <div id="tooltip-{{ app.uuid }}"
+                       role="tooltip"
+                       class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                    {{ app.get_description_short }}
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                  </div>
+                  <div class="px-5 py-5">
+                    <img src="{% buildfullurl app.image.url %}"
+                         height="150"
+                         width="150"
+                         alt="{{ app.name }}" />
+                  </div>
+                  <div class="h-2 w-full"></div>
+                  <div>{{ app.name }}</div>
+                </div>
+              </a>
+            {% endfor %}
+          {% else %}
+            <div class="text-gray-800 dark:text-gray-200 flex flex-row">
+              <div>There are no items in the catalog.</div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="h-2 w-full bg-gray-200 dark:bg-gray-800"></div>
+{% endblock content %}

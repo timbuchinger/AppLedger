@@ -1,0 +1,42 @@
+{% extends "public/base.html" %}
+{% load fullurl %}
+{% load extras %}
+{% block head_title %}
+  {{ app.name }}
+{% endblock head_title %}
+{% block content %}
+  <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-lg shadow dark:border md:mt-0 xl:p-0 dark:border-gray-700">
+    <div class="h-2 w-full "></div>
+    <div class="mx-auto grid grid-cols-[auto_800px_auto]">
+      <div>&nbsp;</div>
+      <div class="rounded-xl bg-gray-100 dark:bg-gray-800 border-2 border-gray-300 dark:border-grey-700">
+        <div class="px-4 py-4">
+          {% if app %}
+            <div class="text-lg font-bold text-gray-700 dark:text-gray-200 pb-1">{{ app.name }}</div>
+            <div class="h-1 w-full bg-gray-200 dark:bg-gray-700"></div>
+            <div>{{ app.description|render_markdown }}</div>
+            <div>
+              <button class="bg-green-400 hover:bg-green-500 text-green-800 font-bold py-2 px-4 rounded inline-flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke-width="2.5"
+                     stroke="currentColor"
+                     class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                <span class="pl-2">Request Access</span>
+              </button>
+            </div>
+          {% else %}
+            <div class="text-gray-800 dark:text-gray-200 flex flex-row">
+              <div>This item does not exist.</div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div>&nbsp;</div>
+    </div>
+    <div class="h-2 w-full "></div>
+  </div>
+{% endblock content %}
